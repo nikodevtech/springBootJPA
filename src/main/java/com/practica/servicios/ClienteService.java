@@ -36,5 +36,12 @@ public interface ClienteService {
 	 * @return El Cliente encontrado por su id
 	 */
 	public Cliente findById(long id);
+	
+	/**
+	 * Obtiene un Cliente por su DNI previamente registrado en el sistema
+	 * @param dni del cliente a buscar
+	 * @return El cliente encontrado por su dni
+	 */
+	public List<Cliente> findByDni(String dni);
 
 }

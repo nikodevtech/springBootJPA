@@ -22,19 +22,43 @@ public class PedidoController {
 	private PedidoService pedidoService;
 	
 	public void delete(long id) {
-		pedidoService.delete(id);
+		try {
+			pedidoService.delete(id);
+		}catch(Exception e) {
+			e.getMessage();
+		}
 	}
+	
 	public void save(Pedido pedido) {
-		pedidoService.save(pedido);
+		try {
+			pedidoService.save(pedido);
+		}catch(Exception e) {
+			e.getMessage();
+		}
 	}
+	
 	public void update(Pedido pedido) {
-		pedidoService.update(pedido);
+		try {
+			pedidoService.update(pedido);
+		}catch(Exception e) {
+			e.getMessage();
+		}
 	}
+	
 	public List<Pedido> findAll() {
-		return pedidoService.findAll();
+		try {
+			return pedidoService.findAll();
+		}catch(Exception e) {
+			e.getMessage();
+			return null;
+		}	
 	}
 	public Pedido findById(long id) {
-		return pedidoService.findById(id);
+		try {
+			return pedidoService.findById(id);
+		}catch(Exception e) {
+			e.getMessage();
+			return null;
+		}
 	}
-
 }

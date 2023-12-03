@@ -41,6 +41,9 @@ public class PersistenciaJpaSpringBootApplication {
 			System.out.println(p.toString());
 		}
 		
+		for(Cliente c : clienteController.findByDni("30242873N")) {
+			System.out.println(c.toString());
+		}
 
 		
 		

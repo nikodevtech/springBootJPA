@@ -20,25 +20,56 @@ public class ClienteController {
 	
 	@Autowired
 	private ClienteService clienteService;
-	
+
 	public void delete(long id) {
-		clienteService.delete(id);
+		try {
+			clienteService.delete(id);
+		} catch(Exception e) {
+			e.getMessage();
+		}
 	}
 	
 	public void save(Cliente cliente) {
-		clienteService.save(cliente);
+		try {
+			clienteService.save(cliente);
+		}catch(Exception e) {
+			e.getMessage();
+		}
 	}
 	
 	public void update(Cliente cliente) {
-		clienteService.update(cliente);
+		try {
+			clienteService.update(cliente);
+		}catch(Exception e) {
+			e.getMessage();
+		}
 	}
 	
 	public List<Cliente> findAll() {
-		return clienteService.findAll();
+		try {
+			return clienteService.findAll();
+		}catch(Exception e) {
+			e.getMessage();
+			return null;
+		}
 	}
 	
 	public Cliente findById(long id) {
-		return clienteService.findById(id);
+		try {
+			return clienteService.findById(id);
+		}catch(Exception e) {
+			e.getMessage();
+			return null;
+		}
+	}
+	
+	public List<Cliente> findByDni(String dni) {
+		try {
+			return clienteService.findByDni(dni);
+		}catch(Exception e) {
+			e.getMessage();
+			return null;
+		}
 	}
 
 }

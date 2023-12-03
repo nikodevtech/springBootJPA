@@ -36,5 +36,12 @@ public interface PedidoService {
 	 * @return El Pedido encontrado por su id
 	 */
 	public Pedido findById(long id);
+	
+	/**
+	 * Obtiene los pedidos por su estado actual
+	 * @param estado de los pedidos a buscar
+	 * @return una lista de pedidos por el campo estado dado
+	 */
+	public List<Pedido> findByEstado(String estado);
 
 }
